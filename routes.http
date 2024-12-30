@@ -1,0 +1,134 @@
+@base_url = http://localhost:4200
+
+# =============================
+# Default Application
+# =============================
+# Test the base app URL to ensure the server is running.
+GET {{base_url}}
+
+###
+
+# =============================
+# Get All Products
+# =============================
+# Fetch all the products available in the system.
+GET {{base_url}}/api/products
+Accept: application/json
+
+###
+
+# =============================
+# Create a New Product
+# =============================
+# Create a new product with the details specified in the request body.
+POST {{base_url}}/api/product
+Content-Type: application/json
+
+{
+  "name": "Sample Product 2",
+  "price": 49.99,
+  "description": "This is also a sample product description.",
+  "category": "Sample Category 2",
+  "image": "https://placehold.co/600x600?text=Sample+Product"
+}
+
+###
+
+# =============================
+# Create New Products
+# =============================
+# Create new products with the details specified in the request body.
+POST {{base_url}}/api/products
+Content-Type: application/json
+
+[
+  {
+    "name": "Sample Product 1",
+    "price": 29.99,
+    "description": "This is a sample product description for product 1.",
+    "category": "Sample Category 1",
+    "image": "https://placehold.co/600x600?text=Sample+Product+1"
+  },
+  {
+    "name": "Sample Product 2",
+    "price": 49.99,
+    "description": "This is a sample product description for product 2.",
+    "category": "Sample Category 2",
+    "image": "https://placehold.co/600x600?text=Sample+Product+2"
+  },
+  {
+    "name": "Sample Product 3",
+    "price": 19.99,
+    "description": "This is a sample product description for product 3.",
+    "category": "Sample Category 3",
+    "image": "https://placehold.co/600x600?text=Sample+Product+3"
+  }
+]
+
+###
+
+# =============================
+# Get Specific Product by ID
+# =============================
+# Retrieve a specific product using its unique ID.
+GET {{base_url}}/api/product/676ceec90c746e17182a33ee
+Accept: application/json
+
+###
+
+# =============================
+# Search for Products by Name
+# =============================
+# Retrieve products matching the specified name.
+GET {{base_url}}/api/products?search=sample
+Accept: application/json
+
+###
+
+# =============================
+# Search Products with Sorting
+# =============================
+# Retrieve products matching the specified name, sorted by the given criteria.
+GET {{base_url}}/api/products?search=sample&sort=name&order=desc
+Accept: application/json
+
+###
+
+# =============================
+# Delete the product with ID
+# =============================
+# Delete products matching the specified ID.
+DELETE {{base_url}}/api/product/676d127af6ebefabe5a95968
+
+###
+
+# =============================
+# Update a Specific Product by ID
+# =============================
+# Update the details of a specific product using its unique ID.
+PUT {{base_url}}/api/product/676ceec90c746e17182a33ee
+Content-Type: application/json
+
+{
+  "name": "Updated Sample Product",
+  "price": 29.99,
+  "description": "This is an updated sample product description.",
+  "category": "Updated Sample Category",
+  "image": "https://placehold.co/600x600?text=Updated+Sample+Product"
+}
+
+###
+
+# =============================
+# Partially Update a Specific Product by ID
+# =============================
+# Partially update the details of a specific product using its unique ID.
+PATCH {{base_url}}/api/product/676ceec90c746e17182a33ee
+Content-Type: application/json
+
+{
+  "price": 24.99,
+  "description": "This is a partially updated sample product description."
+}
+
+###
