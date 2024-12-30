@@ -43,7 +43,7 @@ This API allows you to manage products in a system. You can create, retrieve, up
 
 ### Retrieve All Products
 - **Endpoint:** `GET /api/products`
-- **Description:** Fetch all the products available in the system.
+- **Description:** Fetch all the products available in the system. You can also search for products, sort them, and paginate the results using query parameters such as `search`, `sort`, `order`, `page`, and `limit`.
 
 ### Retrieve a Specific Product by ID
 - **Endpoint:** `GET /api/product/:id`
