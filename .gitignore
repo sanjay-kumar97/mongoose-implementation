@@ -1,0 +1,11 @@
+# Node modules
+node_modules
+
+# Lock file
+package-lock.json
+
+# dotenv environment variable files
+.env*
+
+# IDEs and editors
+.vscode
