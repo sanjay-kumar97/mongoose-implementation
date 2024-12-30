@@ -1,0 +1,30 @@
+{
+  "name": "mongoose-implementation",
+  "version": "1.0.0",
+  "description": "Node application to implement and explore Mongoose package ",
+  "main": "main.js",
+  "scripts": {
+    "start": "node --env-file=.env src/server.js",
+    "dev": "nodemon --env-file=.env.dev src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjay-kumar97/mongoose-implementation.git"
+  },
+  "keywords": [
+    "node",
+    "mongo",
+    "mongoose"
+  ],
+  "author": "Sanjay Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjay-kumar97/mongoose-implementation/issues"
+  },
+  "homepage": "https://github.com/sanjay-kumar97/mongoose-implementation#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.9.2",
+    "nodemon": "^3.1.9"
+  }
+}
